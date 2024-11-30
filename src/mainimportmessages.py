@@ -177,11 +177,10 @@ def processar_paginas(ini_file='config-messages.ini'):
     pagina_atual, per_page, bearer_token = carregar_configuracoes(cursor, ini_file)
     url = 'https://stcorretora.digisac.me/api/v1/messages'
     url_base = url + '?page={}&perPage={}&query={}'
-    query = '{"where":{"contactId":"a9ce322f-81e2-4d50-88eb-fd214a9158fc"},"include":["file","files",{"model":"ticket","include":["ticketTransfers"]},{"model":"user","attributes":["id","name"]},{"model":"ticketTransfer","include":["fromUser","toUser","fromDepartment","toDepartment","byUser"]},{"model":"from","attributes":["id","name","alternativeName","internalName"]},{"model":"contact","attributes":["id"]}]}'
+    #query = '{"where":{"contactId":"a9ce322f-81e2-4d50-88eb-fd214a9158fc"},"include":["file","files",{"model":"ticket","include":["ticketTransfers"]},{"model":"user","attributes":["id","name"]},{"model":"ticketTransfer","include":["fromUser","toUser","fromDepartment","toDepartment","byUser"]},{"model":"from","attributes":["id","name","alternativeName","internalName"]},{"model":"contact","attributes":["id"]}]}'
+    query = '{"include":["file","files",{"model":"ticket","include":["ticketTransfers"]},{"model":"user","attributes":["id","name"]},{"model":"ticketTransfer","include":["fromUser","toUser","fromDepartment","toDepartment","byUser"]},{"model":"from","attributes":["id","name","alternativeName","internalName"]},{"model":"contact","attributes":["id"]}]}'
 
-    #url = 'https://stcorretora.digisac.me/api/v1/messages'
-    #url_base = url + '?page={}&perPage={}'
-
+    
     headers = {
         'Authorization': f'Bearer {bearer_token}',
         'X-Return-Base64': 'true'
