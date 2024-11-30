@@ -1,0 +1,10 @@
+# created by virtualenv automatically
+Lib/
+libs/
+Scripts/
+include/
+docs/
+*.jpeg
+*.mp4
+*.oga
+pyvenv.cfg 
