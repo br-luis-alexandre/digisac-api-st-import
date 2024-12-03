@@ -6,5 +6,10 @@ include/
 docs/
 *.jpeg
 *.mp4
+*.m4a
+*.pdf
 *.oga
+*.docx
+*.pdf'
+*.png
 pyvenv.cfg 
